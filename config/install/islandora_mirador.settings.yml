@@ -1,3 +1,13 @@
+---
+installation_type: 'remote.custom'
+# XXX: Really, this installation_config stuff seems like a candidate for
+# config entities, especially if the installation type concept was made
+# into a plugin.
+installation_config:
+  remote:
+    custom:
+      js:
+        - 'https://roblib.github.io/mirador-integration-islandora/islandora-mirador-0.1.0.js'
 mirador_library_use_remote: 'remote'
 mirador_library_location: 'https://roblib.github.io/mirador-integration-islandora/islandora-mirador-0.1.0.js'
 mirador_enabled_plugins: {  }

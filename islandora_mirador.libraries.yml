@@ -1,4 +1,13 @@
+---
 mirador:
+  version: 3
+  remote: https://projectmirador.org
+  license:
+    name: Apache license
+    url: https://github.com/ProjectMirador/mirador/blob/master/LICENSE
+    gpl-compatible: true
+
+mirador.remote.cdn.jsdelivr:
   version: 3.3.0
   remote: https://projectmirador.org
   license:
@@ -7,6 +16,19 @@ mirador:
     gpl-compatible: true
   js:
     https://cdn.jsdelivr.net/npm/mirador@3.3.0/dist/mirador.min.js: { type: external, minified: true}
+mirador.libraries:
+  version: 3
+  remote: https://projectmirador.org
+  js:
+    /libraries/mirador/dist/main.js: {}
+mirador.remote.custom:
+  version: 3
+  remote: https://projectmirador.org
+  license:
+    name: Apache license
+    url: https://github.com/ProjectMirador/mirador/blob/master/LICENSE
+    gpl-compatible: true
+
 viewer:
   version: 1.x
   js:

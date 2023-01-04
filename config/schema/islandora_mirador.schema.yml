@@ -2,12 +2,17 @@ islandora_mirador.settings:
   type: config_object
   label: 'Mirador Settings'
   mapping:
-    mirador_library_use_remote:
+    installation_type:
       type: string
-      label: 'Mirador library use remote'
-    mirador_library_location:
-      type: string
-      label: 'Mirador library remote location'
+      label: 'Installation type "plugin"'
+    # XXX: Really, this installation_config stuff seems like a candidate for
+    # config entities, especially if the installation type concept was made
+    # into a plugin.
+    installation_config:
+      type: sequence
+      label: 'Installation configuration'
+      sequence:
+        type: ignore
     mirador_enabled_plugins:
       type: sequence
       label: 'Enabled Plugins'
