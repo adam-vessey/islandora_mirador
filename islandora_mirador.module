@@ -101,9 +101,15 @@ function islandora_mirador_library_info_alter(array &$libraries, $extension) {
   if ($extension == 'islandora_mirador') {
     /** @var \Drupal\Core\Config\ImmutableConfig $config */
     $config = \Drupal::service('config.factory')->get('islandora_mirador.settings');
-    $installation_types = _islandora_mirador_library_installation_types();
+
+    // Target the selected installation type by injecting it as a dependency.
     $installation_type = $config->get('installation_type');
     $libraries['mirador']['dependencies'][] = "islandora_mirador/mirador.{$installation_type}";
+
+    // Apply any configuration to the target types. Presently, just expected to
+    // contain the values a library might contain, that we then merge into the
+    // library definitions.
+    $installation_types = _islandora_mirador_library_installation_types();
     foreach ($installation_types as $type => $info) {
       $target_library = "mirador.{$type}";
       # XXX: Really, this installation_config stuff seems like a candidate for
